@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}
-            <h1>TODO: add content</h1>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        {% block fullTitle %}
+            Еко Свят - {% block title %} Начало {% endblock %}
         {% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    </title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
+
+    <!-- Vendor CSS -->
+    <link href="{{ asset('lib/css/vendors.css') }}" rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="{{ asset('lib/css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+{% block bodyFull %}
+    {% block body %}
+        It should work!
+    {% endblock %}
+{% endblock %}
+
+<!-- Vendor JS -->
+<script src="{{ asset('lib/js/vendors.js') }}"></script>
+
+<!-- Active JS -->
+<script src="{{ asset('lib/js/active.js') }}"></script>
+</body>
+
 </html>
