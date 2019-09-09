@@ -23,11 +23,15 @@
 </head>
 <body>
 
+{% embed 'layout/header.twig' %} {% endembed %}
+
 {% block bodyFull %}
     {% block body %}
         It should work!
     {% endblock %}
 {% endblock %}
+
+{% embed 'layout/footer.twig' %} {% endembed %}
 
 <!-- Vendor JS -->
 <script src="{{ asset('lib/js/vendors.js') }}"></script>
