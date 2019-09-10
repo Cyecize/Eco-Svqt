@@ -102,7 +102,7 @@
                                 <!--=======  logo  =======-->
 
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="{{ path('homepage') }}">
                                         <img src="{{ asset('assets/img/logo.png') }}" class="img-fluid" alt="">
                                     </a>
                                 </div>
@@ -323,7 +323,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a href="contact.html">CONTACT</a></li>
+                                <li><a href="contact.html" class="text-uppercase">{{ dict.contacts }}</a></li>
                             </ul>
                         </nav>
 

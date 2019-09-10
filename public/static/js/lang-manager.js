@@ -8,7 +8,12 @@ $(function () {
         var lng = $(e.target).data('locale');
         document.cookie = "lang=" + lng + ';path=/;';
 
-        location.href = stripLangParamFromQueryString(window.location.toString());
+        var newUrl = stripLangParamFromQueryString(window.location.toString());
+        if (location.href === newUrl) {
+            location.reload();
+        } else {
+            location.href = newUrl;
+        }
     });
 
     /**
