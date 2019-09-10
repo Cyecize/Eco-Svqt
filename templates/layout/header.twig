@@ -52,13 +52,15 @@
                                     </div>
                                     <span class="separator">|</span>
                                     <div class="header-top-single-dropdown">
-                                        <a href="javascript:void(0)" class="active-dropdown-trigger" id="language-options"> <img src="{{ asset('assets/imgtemp/en-gb.png') }}" alt=""> En-Gb <i class="ion-ios-arrow-down"></i></a>
+                                        <a href="javascript:void(0)" class="active-dropdown-trigger text-uppercase" id="language-options">
+                                            <img src="{{ asset('assets/img/lang/world.png') }}" width="16px" height="16px" alt=""> {{ dict.localLang }} <i class="ion-ios-arrow-down"></i>
+                                        </a>
                                         <!--=======  dropdown menu items  =======-->
 
                                         <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu">
                                             <ul>
-                                                <li><a href="#"> <img src="{{ asset('assets/imgtemp/en-gb.png') }}" alt=""> English </a></li>
-                                                <li><a href="#"> <img src="{{ asset('assets/imgtemp/de-de.png') }}" alt=""> Germany </a></li>
+                                                <li><a href="#" class="choose-lang" data-locale="en"> <img src="{{ asset('assets/img/lang/en.png') }}" alt=""> English </a></li>
+                                                <li><a href="#" class="choose-lang" data-locale="bg"> <img src="{{ asset('assets/img/lang/bg.png') }}" alt=""> Български </a></li>
                                             </ul>
                                         </div>
 
