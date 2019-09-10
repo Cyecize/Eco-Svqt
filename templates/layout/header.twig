@@ -1,3 +1,4 @@
+{# @var dict \App\Lang\LanguagePack #}
 <!--====================  Header area ====================-->
 
 <div class="header-area header-sticky">
@@ -15,7 +16,7 @@
                                 <!--=======  header top social links  =======-->
 
                                 <div class="header-top-social-links">
-                                    <span class="follow-text mr-15">Follow Us:</span>
+                                    <span class="follow-text mr-15 text-capitalize">{{ dict.followUs }}:</span>
                                     <!--=======  social link small  =======-->
 
                                     <ul class="social-link-small">
@@ -37,13 +38,13 @@
 
                                 <div class="headertop-dropdown-container justify-content-center justify-content-md-end">
                                     <div class="header-top-single-dropdown">
-                                        <a href="javascript:void(0)" class="active-dropdown-trigger" id="user-options">My Account <i class="ion-ios-arrow-down"></i></a>
+                                        <a href="javascript:void(0)" class="active-dropdown-trigger text-capitalize" id="user-options">{{ dict.myAccount }} <i class="ion-ios-arrow-down"></i></a>
                                         <!--=======  dropdown menu items  =======-->
 
                                         <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu extra-small-mobile-fix">
                                             <ul>
-                                                <li><a href="login-register.html">Register</a></li>
-                                                <li><a href="login-register.html">Login</a></li>
+                                                <li><a href="login-register.html">{{ dict.login }}</a></li>
+                                                <li><a href="login-register.html">{{ dict.register }}</a></li>
                                             </ul>
                                         </div>
 
@@ -112,7 +113,7 @@
 
                                 <div class="search-bar">
                                     <form action="#">
-                                        <input type="search" placeholder="Search entire store here ...">
+                                        <input type="search" placeholder="{{ dict.searchProductsHere }} ...">
                                         <button type="submit"> <i class="icon-search"></i></button>
                                     </form>
                                 </div>
@@ -128,8 +129,8 @@
                                         <img src="{{ asset('assets/imgtemp/icon-header-phone.png') }}" class="img-fluid" alt="">
                                     </div>
 
-                                    <div class="text">
-                                        <span>Customer Support</span>
+                                    <div class="text text-capitalize">
+                                        <span>{{ dict.quickOrder }}</span>
                                         <p>(08) 12 345 789</p>
                                     </div>
                                 </div>
@@ -233,14 +234,7 @@
                     <div class="main-menu d-none d-lg-block">
                         <nav>
                             <ul>
-                                <li class="active menu-item-has-children"><a href="index.html">HOME</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="index.html">Home Shop 1</a></li>
-                                        <li><a href="index-2.html">Home Shop 2</a></li>
-                                        <li><a href="index-3.html">Home Shop 3</a></li>
-                                        <li><a href="index-4.html">Home Shop 4</a></li>
-                                    </ul>
-                                </li>
+                                <li class="active text-uppercase"><a href="{{ path('homepage') }}">{{ dict.home }}</a></li>
 
                                 <li class="menu-item-has-children"><a href="#">PAGES</a>
                                     <ul class="sub-menu">

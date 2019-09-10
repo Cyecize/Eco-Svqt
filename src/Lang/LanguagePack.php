@@ -18,4 +18,12 @@ interface LanguagePack
     function login(): string;
 
     function register(): string;
+
+    function followUs(): string;
+
+    function myAccount(): string;
+
+    function quickOrder(): string;
+
+    function searchProductsHere(): string;
 }

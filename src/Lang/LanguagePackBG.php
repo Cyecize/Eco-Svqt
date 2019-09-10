@@ -20,6 +20,14 @@ class LanguagePackBG implements LanguagePack
 
     private const WEBSITE_NAME = "Еко Свят";
 
+    private const FOLLOW_US = "Последвайте ни";
+
+    private const MY_ACCOUNT = "Моят профил";
+
+    private const QUICK_ORDER = "Бърза поръчка";
+
+    private const SEARCH_PRODUCTS_HERE = "Търсете продукти тук";
+
     function getLocalLang(): string
     {
         return Config::COOKIE_BG_LANG;
@@ -53,5 +61,25 @@ class LanguagePackBG implements LanguagePack
     function register(): string
     {
         return self::REGISTER;
+    }
+
+    function followUs(): string
+    {
+        return self::FOLLOW_US;
+    }
+
+    function myAccount(): string
+    {
+        return self::MY_ACCOUNT;
+    }
+
+    function quickOrder(): string
+    {
+        return self::QUICK_ORDER;
+    }
+
+    function searchProductsHere(): string
+    {
+        return self::SEARCH_PRODUCTS_HERE;
     }
 }
