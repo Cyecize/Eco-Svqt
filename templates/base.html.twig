@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="">
+{# @var dict \App\Lang\LanguagePack #}
+{% set dict = localLang.dictionary %}
+
+<html lang="{{ dict.localLang }}">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
         {% block fullTitle %}
-            Еко Свят - {% block title %} Начало {% endblock %}
+            {{ dict.websiteName }} - {% block title %} {{ dict.home }} {% endblock %}
         {% endblock %}
     </title>
 
