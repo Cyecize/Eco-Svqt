@@ -6,13 +6,15 @@ $(function () {
 
     options.on('click', function (e) {
         var lng = $(e.target).data('locale');
-        document.cookie = "lang=" + lng + ';path=/;';
+        if (lng !== currentLang) {
+            document.cookie = COOKIE_LANG_NAME + "=" + lng + ';path=/;';
 
-        var newUrl = stripLangParamFromQueryString(window.location.toString());
-        if (location.href === newUrl) {
-            location.reload();
-        } else {
-            location.href = newUrl;
+            var newUrl = stripLangParamFromQueryString(window.location.toString());
+            if (location.href === newUrl) {
+                location.reload();
+            } else {
+                location.href = newUrl;
+            }
         }
     });
 
