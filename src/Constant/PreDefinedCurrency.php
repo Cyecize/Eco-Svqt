@@ -6,12 +6,13 @@ namespace App\Constant;
  * Class LocalCurrencies
  * @package App\Constant
  *
- * Pre-defined exchange rates as of 13 Sep 2019!
- *
- * TODO: move the pre-defined exchange rates into a config file and then update them every day with cron job.
+ * These exchange rates are not the final ones. The rates are corrected before showing to the view.
  */
 class PreDefinedCurrency
 {
+
+    private static $ALL = null;
+
     /**
      * @var string
      */
@@ -49,7 +50,7 @@ class PreDefinedCurrency
      */
     public static function USD(): PreDefinedCurrency
     {
-        return new PreDefinedCurrency("United States Dollar", "USD", 1.76418182);
+        return new PreDefinedCurrency("United States Dollar", "USD", 1.7);
     }
 
     /**
@@ -58,7 +59,16 @@ class PreDefinedCurrency
      */
     public static function EUR(): PreDefinedCurrency
     {
-        return new PreDefinedCurrency("Euro", "EUR", 1.95618848);
+        return new PreDefinedCurrency("Euro", "EUR", 1.9);
+    }
+
+    public static final function ALL()
+    {
+        if (self::$ALL == null) {
+            self::$ALL = [self::BGN(), self::USD(), self::EUR()];
+        }
+
+        return self::$ALL;
     }
 
     /**
@@ -83,5 +93,10 @@ class PreDefinedCurrency
     public function getMultiplier(): float
     {
         return $this->multiplier;
+    }
+
+    public function setMultiplier(float $multiplier)
+    {
+        $this->multiplier = $multiplier;
     }
 }

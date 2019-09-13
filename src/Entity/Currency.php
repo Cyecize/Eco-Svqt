@@ -33,12 +33,6 @@ class Currency
      */
     private $sign;
 
-    /**
-     * @var double
-     * @ORM\Column(name="multiplier", type="float")
-     */
-    private $multiplier;
-
     public function __construct()
     {
 
@@ -90,21 +84,5 @@ class Currency
     public function setSign(string $sign): void
     {
         $this->sign = $sign;
-    }
-
-    /**
-     * @return float
-     */
-    public function getMultiplier(): float
-    {
-        return $this->multiplier;
-    }
-
-    /**
-     * @param float $multiplier
-     */
-    public function setMultiplier(float $multiplier): void
-    {
-        $this->multiplier = $multiplier;
     }
 }

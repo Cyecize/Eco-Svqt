@@ -14,33 +14,35 @@ class LocalCurrencyImpl implements LocalCurrency
      */
     private $currentCurrency;
 
-    public function __construct()
+    /**
+     * @var CurrencyRateService
+     */
+    private $currencyRateService;
+
+    /**
+     * @var PreDefinedCurrency[]
+     */
+    private $allCurrencies;
+
+    public function __construct(CurrencyRateService $currencyRateService)
     {
+        $this->currencyRateService = $currencyRateService;
         $this->initCurrency();
     }
 
     public function setCurrency(string $currencyType)
     {
-        $newCurrency = null;
+        $currencyType = strtoupper($currencyType);
 
-        switch (strtoupper($currencyType)) {
-            case PreDefinedCurrency::BGN()->getSign():
-                $newCurrency = PreDefinedCurrency::BGN();
-                break;
-            case PreDefinedCurrency::EUR()->getSign():
-                $newCurrency = PreDefinedCurrency::EUR();
-                break;
-            case PreDefinedCurrency::USD()->getSign():
-                $newCurrency = PreDefinedCurrency::USD();
-                break;
-            default:
-                $newCurrency = PreDefinedCurrency::BGN();
-                break;
-        }
+        foreach ($this->allCurrencies as $currentCurrency) {
+            if ($currentCurrency->getSign() === $currencyType) {
 
-        if ($this->currentCurrency == null || $this->currentCurrency->getSign() !== $newCurrency->getSign()) {
-            $this->currentCurrency = $newCurrency;
-            $this->setCookie($newCurrency->getSign());
+                if ($this->currentCurrency == null || $this->currentCurrency->getSign() !== $currentCurrency->getSign()) {
+                    $this->currencyRateService->setCurrencyRate($currentCurrency);
+                    $this->currentCurrency = $currentCurrency;
+                    $this->setCookie($currentCurrency->getSign());
+                }
+            }
         }
     }
 
@@ -51,6 +53,8 @@ class LocalCurrencyImpl implements LocalCurrency
 
     private function initCurrency()
     {
+        $this->allCurrencies = PreDefinedCurrency::ALL();
+
         if (isset($_COOKIE[Config::COOKIE_CURRENCY_NAME])) {
             $this->setCurrency($_COOKIE[Config::COOKIE_CURRENCY_NAME]);
             return;
