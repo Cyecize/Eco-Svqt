@@ -12,4 +12,6 @@ class Config
     public const COOKIE_EN_LANG = "en";
 
     public const COOKIE_NEUTRAL_LANG = "neutral";
+
+    public const COOKIE_CURRENCY_NAME = "currency";
 }
