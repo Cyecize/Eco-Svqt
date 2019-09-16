@@ -1,0 +1,16 @@
+{
+  "methodCalls": [
+    {
+      "class": "\\App\\Util\\ModelMapper",
+      "method": "merge",
+      "position": 1
+    },
+    {
+      "class": "\\App\\Util\\ModelMapper",
+      "method": "map",
+      "position": 1
+    }
+  ],
+  "functionCalls": [
+  ]
+}

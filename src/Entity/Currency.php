@@ -29,7 +29,7 @@ class Currency
 
     /**
      * @var string
-     * @ORM\Column(name="sign", type="string", length=10)
+     * @ORM\Column(name="sign", type="string", length=10, unique=true)
      */
     private $sign;
 

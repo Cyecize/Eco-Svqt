@@ -10,9 +10,15 @@ class FirstRunServiceImpl implements FirstRunService
      */
     private $langService;
 
-    public function __construct(LangDbService $langService)
+    /**
+     * @var CurrencyService
+     */
+    private $currencyService;
+
+    public function __construct(LangDbService $langService, CurrencyService $currencyService)
     {
         $this->langService = $langService;
+        $this->currencyService = $currencyService;
     }
 
     /**
@@ -21,5 +27,6 @@ class FirstRunServiceImpl implements FirstRunService
     public function initDb(): void
     {
         $this->langService->initLanguages();
+        $this->currencyService->init();
     }
 }
