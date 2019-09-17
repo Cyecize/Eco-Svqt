@@ -1,0 +1,1033 @@
+countries:
+  1: 'Bulgaria'
+
+towns:
+  'Bulgaria':
+    1:
+      townName: Айтос
+      postCode: 8500
+      id: 1
+    2:
+      townName: Аксаково
+      postCode: 9154
+      id: 2
+    3:
+      townName: Алфатар
+      postCode: 7570
+      id: 3
+    4:
+      townName: Антоново
+      postCode: 7970
+      id: 4
+    5:
+      townName: Априлци
+      postCode: 5641
+      id: 5
+    6:
+      townName: Ардино
+      postCode: 6750
+      id: 6
+    7:
+      townName: Асеновград
+      postCode: 4230
+      id: 7
+    8:
+      townName: Ахелой
+      postCode: 8217
+      id: 8
+    9:
+      townName: Ахтопол
+      postCode: 8280
+      id: 9
+    10:
+      townName: Балчик
+      postCode: 9600
+      id: 10
+    11:
+      townName: Банкя
+      postCode: 1320
+      id: 11
+    12:
+      townName: Банско
+      postCode: 2770
+      id: 12
+    13:
+      townName: Баня
+      postCode: 4360
+      id: 13
+    14:
+      townName: Батак
+      postCode: 4580
+      id: 14
+    15:
+      townName: Батановци
+      postCode: 2340
+      id: 15
+    16:
+      townName: Белене
+      postCode: 5930
+      id: 16
+    17:
+      townName: Белица
+      postCode: 2780
+      id: 17
+    18:
+      townName: Белово
+      postCode: 4470
+      id: 18
+    19:
+      townName: Белоградчик
+      postCode: 3900
+      id: 19
+    20:
+      townName: Белослав
+      postCode: 9178
+      id: 20
+    21:
+      townName: Берковица
+      postCode: 3500
+      id: 21
+    22:
+      townName: Благоевград
+      postCode: 2700
+      id: 22
+    23:
+      townName: Бобов дол
+      postCode: 2670
+      id: 23
+    24:
+      townName: Бобошево
+      postCode: 2660
+      id: 24
+    25:
+      townName: Божурище
+      postCode: 2227
+      id: 25
+    26:
+      townName: Бойчиновци
+      postCode: 3430
+      id: 26
+    27:
+      townName: Болярово
+      postCode: 8720
+      id: 27
+    28:
+      townName: Борово
+      postCode: 7174
+      id: 28
+    29:
+      townName: Ботевград
+      postCode: 2140
+      id: 29
+    30:
+      townName: Брацигово
+      postCode: 4579
+      id: 30
+    31:
+      townName: Брегово
+      postCode: 3790
+      id: 31
+    32:
+      townName: Брезник
+      postCode: 2360
+      id: 32
+    33:
+      townName: Брезово
+      postCode: 4160
+      id: 33
+    34:
+      townName: Брусарци
+      postCode: 3680
+      id: 34
+    35:
+      townName: Бургас
+      postCode: 8000
+      id: 35
+    36:
+      townName: Бухово
+      postCode: 1830
+      id: 36
+    37:
+      townName: Българово
+      postCode: 8110
+      id: 37
+    38:
+      townName: Бяла
+      postCode: 9101
+      id: 38
+    39:
+      townName: Бяла
+      postCode: 7100
+      id: 39
+    40:
+      townName: Бяла Слатина
+      postCode: 3200
+      id: 40
+    41:
+      townName: Бяла Черква
+      postCode: 5220
+      id: 41
+    42:
+      townName: Варна
+      postCode: 9000
+      id: 42
+    43:
+      townName: Велики Преслав
+      postCode: 9850
+      id: 43
+    44:
+      townName: Велико Търново
+      postCode: 5000
+      id: 44
+    45:
+      townName: Велинград
+      postCode: 4600
+      id: 45
+    46:
+      townName: Ветово
+      postCode: 7080
+      id: 46
+    47:
+      townName: Ветрен
+      postCode: 4480
+      id: 47
+    48:
+      townName: Видин
+      postCode: 3700
+      id: 48
+    49:
+      townName: Враца
+      postCode: 3000
+      id: 49
+    50:
+      townName: Вълчедръм
+      postCode: 3650
+      id: 50
+    51:
+      townName: Вълчи дол
+      postCode: 9280
+      id: 51
+    52:
+      townName: Върбица
+      postCode: 9870
+      id: 52
+    53:
+      townName: Вършец
+      postCode: 3540
+      id: 53
+    54:
+      townName: Габрово
+      postCode: 5300
+      id: 54
+    55:
+      townName: Генерал Тошево
+      postCode: 9500
+      id: 55
+    56:
+      townName: Главиница
+      postCode: 7630
+      id: 56
+    57:
+      townName: Глоджево
+      postCode: 7040
+      id: 57
+    58:
+      townName: Годеч
+      postCode: 2240
+      id: 58
+    59:
+      townName: Горна Оряховица
+      postCode: 5100
+      id: 59
+    60:
+      townName: Гоце Делчев
+      postCode: 2900
+      id: 60
+    61:
+      townName: Грамада
+      postCode: 3830
+      id: 61
+    62:
+      townName: Гулянци
+      postCode: 5960
+      id: 62
+    63:
+      townName: Гурково
+      postCode: 6199
+      id: 63
+    64:
+      townName: Гълъбово
+      postCode: 6280
+      id: 64
+    65:
+      townName: Две могили
+      postCode: 7150
+      id: 65
+    66:
+      townName: Дебелец
+      postCode: 5030
+      id: 66
+    67:
+      townName: Девин
+      postCode: 4800
+      id: 67
+    68:
+      townName: Девня
+      postCode: 9160
+      id: 68
+    69:
+      townName: Джебел
+      postCode: 6850
+      id: 69
+    70:
+      townName: Димитровград
+      postCode: 6400
+      id: 70
+    71:
+      townName: Димово
+      postCode: 3750
+      id: 71
+    72:
+      townName: Добринище
+      postCode: 2777
+      id: 72
+    73:
+      townName: Добрич
+      postCode: 9300
+      id: 73
+    74:
+      townName: Долна баня
+      postCode: 2040
+      id: 74
+    75:
+      townName: Долна Митрополия
+      postCode: 5855
+      id: 75
+    76:
+      townName: Долна Оряховица
+      postCode: 5130
+      id: 76
+    77:
+      townName: Долни Дъбник
+      postCode: 5870
+      id: 77
+    78:
+      townName: Долни чифлик
+      postCode: 9120
+      id: 78
+    79:
+      townName: Доспат
+      postCode: 4831
+      id: 79
+    80:
+      townName: Драгоман
+      postCode: 2210
+      id: 80
+    81:
+      townName: Дряново
+      postCode: 5370
+      id: 81
+    82:
+      townName: Дулово
+      postCode: 7650
+      id: 82
+    83:
+      townName: Дунавци
+      postCode: 3740
+      id: 83
+    84:
+      townName: Дупница
+      postCode: 2600
+      id: 84
+    85:
+      townName: Дългопол
+      postCode: 9250
+      id: 85
+    86:
+      townName: Елена
+      postCode: 5070
+      id: 86
+    87:
+      townName: Елин Пелин
+      postCode: 2100
+      id: 87
+    88:
+      townName: Елхово
+      postCode: 8700
+      id: 88
+    89:
+      townName: Етрополе
+      postCode: 2180
+      id: 89
+    90:
+      townName: Завет
+      postCode: 7330
+      id: 90
+    91:
+      townName: Земен
+      postCode: 2440
+      id: 91
+    92:
+      townName: Златарица
+      postCode: 5090
+      id: 92
+    93:
+      townName: Златица
+      postCode: 2080
+      id: 93
+    94:
+      townName: Златоград
+      postCode: 4980
+      id: 94
+    95:
+      townName: Ивайловград
+      postCode: 6570
+      id: 95
+    96:
+      townName: Игнатиево
+      postCode: 9143
+      id: 96
+    97:
+      townName: Искър
+      postCode: 5868
+      id: 97
+    98:
+      townName: Исперих
+      postCode: 7400
+      id: 98
+    99:
+      townName: Ихтиман
+      postCode: 2050
+      id: 99
+    100:
+      townName: Каблешково
+      postCode: 8210
+      id: 100
+    101:
+      townName: Каварна
+      postCode: 9650
+      id: 101
+    102:
+      townName: Казанлък
+      postCode: 6100
+      id: 102
+    103:
+      townName: Калофер
+      postCode: 4370
+      id: 103
+    104:
+      townName: Камено
+      postCode: 8120
+      id: 104
+    105:
+      townName: Каолиново
+      postCode: 9960
+      id: 105
+    106:
+      townName: Карлово
+      postCode: 4300
+      id: 106
+    107:
+      townName: Карнобат
+      postCode: 8400
+      id: 107
+    108:
+      townName: Каспичан
+      postCode: 9930
+      id: 108
+    109:
+      townName: Кермен
+      postCode: 8870
+      id: 109
+    110:
+      townName: Килифарево
+      postCode: 5050
+      id: 110
+    111:
+      townName: Китен
+      postCode: 8183
+      id: 111
+    112:
+      townName: Клисура
+      postCode: 4341
+      id: 112
+    113:
+      townName: Кнежа
+      postCode: 5835
+      id: 113
+    114:
+      townName: Козлодуй
+      postCode: 3320
+      id: 114
+    115:
+      townName: Койнаре
+      postCode: 5986
+      id: 115
+    116:
+      townName: Копривщица
+      postCode: 2077
+      id: 116
+    117:
+      townName: Костандово
+      postCode: 4644
+      id: 117
+    118:
+      townName: Костенец
+      postCode: 2030
+      id: 118
+    119:
+      townName: Костинброд
+      postCode: 2230
+      id: 119
+    120:
+      townName: Котел
+      postCode: 8970
+      id: 120
+    121:
+      townName: Кочериново
+      postCode: 2640
+      id: 121
+    122:
+      townName: Кресна
+      postCode: 2840
+      id: 122
+    123:
+      townName: Криводол
+      postCode: 3060
+      id: 123
+    124:
+      townName: Кричим
+      postCode: 4220
+      id: 124
+    125:
+      townName: Крумовград
+      postCode: 6900
+      id: 125
+    126:
+      townName: Крън
+      postCode: 6140
+      id: 126
+    127:
+      townName: Кубрат
+      postCode: 7300
+      id: 127
+    128:
+      townName: Куклен
+      postCode: 4101
+      id: 128
+    129:
+      townName: Кула
+      postCode: 3800
+      id: 129
+    130:
+      townName: Кърджали
+      postCode: 6600
+      id: 130
+    131:
+      townName: Кюстендил
+      postCode: 2500
+      id: 131
+    132:
+      townName: Левски
+      postCode: 5900
+      id: 132
+    133:
+      townName: Летница
+      postCode: 5570
+      id: 133
+    134:
+      townName: Ловеч
+      postCode: 5500
+      id: 134
+    135:
+      townName: Лозница
+      postCode: 7290
+      id: 135
+    136:
+      townName: Лом
+      postCode: 3600
+      id: 136
+    137:
+      townName: Луковит
+      postCode: 5770
+      id: 137
+    138:
+      townName: Лъки
+      postCode: 4241
+      id: 138
+    139:
+      townName: Любимец
+      postCode: 6550
+      id: 139
+    140:
+      townName: Лясковец
+      postCode: 5140
+      id: 140
+    141:
+      townName: Мадан
+      postCode: 4900
+      id: 141
+    142:
+      townName: Маджарово
+      postCode: 6480
+      id: 142
+    143:
+      townName: Малко Търново
+      postCode: 8162
+      id: 143
+    144:
+      townName: Мартен
+      postCode: 7058
+      id: 144
+    145:
+      townName: Мездра
+      postCode: 3100
+      id: 145
+    146:
+      townName: Мелник
+      postCode: 2820
+      id: 146
+    147:
+      townName: Меричлери
+      postCode: 6430
+      id: 147
+    148:
+      townName: Мизия
+      postCode: 3330
+      id: 148
+    149:
+      townName: Момин проход
+      postCode: 2035
+      id: 149
+    150:
+      townName: Момчилград
+      postCode: 6800
+      id: 150
+    151:
+      townName: Монтана
+      postCode: 3400
+      id: 151
+    152:
+      townName: Мъглиж
+      postCode: 6180
+      id: 152
+    153:
+      townName: Неделино
+      postCode: 4990
+      id: 153
+    154:
+      townName: Несебър
+      postCode: 8230
+      id: 154
+    155:
+      townName: Николаево
+      postCode: 6190
+      id: 155
+    156:
+      townName: Никопол
+      postCode: 5940
+      id: 156
+    157:
+      townName: Нова Загора
+      postCode: 8900
+      id: 157
+    158:
+      townName: Нови Искър
+      postCode: 1280
+      id: 158
+    159:
+      townName: Нови пазар
+      postCode: 9900
+      id: 159
+    160:
+      townName: Обзор
+      postCode: 8250
+      id: 160
+    161:
+      townName: Омуртаг
+      postCode: 7900
+      id: 161
+    162:
+      townName: Опака
+      postCode: 7840
+      id: 162
+    163:
+      townName: Оряхово
+      postCode: 3300
+      id: 163
+    164:
+      townName: Павел баня
+      postCode: 6155
+      id: 164
+    165:
+      townName: Павликени
+      postCode: 5200
+      id: 165
+    166:
+      townName: Пазарджик
+      postCode: 4400
+      id: 166
+    167:
+      townName: Панагюрище
+      postCode: 4500
+      id: 167
+    168:
+      townName: Перник
+      postCode: 2300
+      id: 168
+    169:
+      townName: Перущица
+      postCode: 4225
+      id: 169
+    170:
+      townName: Петрич
+      postCode: 2850
+      id: 170
+    171:
+      townName: Пещера
+      postCode: 4550
+      id: 171
+    172:
+      townName: Пирдоп
+      postCode: 2070
+      id: 172
+    173:
+      townName: Плачковци
+      postCode: 5360
+      id: 173
+    174:
+      townName: Плевен
+      postCode: 5800
+      id: 174
+    175:
+      townName: Плиска
+      postCode: 9920
+      id: 175
+    176:
+      townName: Пловдив
+      postCode: 4000
+      id: 176
+    177:
+      townName: Полски Тръмбеш
+      postCode: 5180
+      id: 177
+    178:
+      townName: Поморие
+      postCode: 8200
+      id: 178
+    179:
+      townName: Попово
+      postCode: 7800
+      id: 179
+    180:
+      townName: Пордим
+      postCode: 5898
+      id: 180
+    181:
+      townName: Правец
+      postCode: 2161
+      id: 181
+    182:
+      townName: Приморско
+      postCode: 8180
+      id: 182
+    183:
+      townName: Провадия
+      postCode: 9200
+      id: 183
+    184:
+      townName: Първомай
+      postCode: 4270
+      id: 184
+    185:
+      townName: Раднево
+      postCode: 6260
+      id: 185
+    186:
+      townName: Радомир
+      postCode: 2400
+      id: 186
+    187:
+      townName: Разград
+      postCode: 7200
+      id: 187
+    188:
+      townName: Разлог
+      postCode: 2760
+      id: 188
+    189:
+      townName: Ракитово
+      postCode: 4640
+      id: 189
+    190:
+      townName: Раковски
+      postCode: 4150
+      id: 190
+    191:
+      townName: Рила
+      postCode: 2630
+      id: 191
+    192:
+      townName: Роман
+      postCode: 3130
+      id: 192
+    193:
+      townName: Рудозем
+      postCode: 4960
+      id: 193
+    194:
+      townName: Русе
+      postCode: 7000
+      id: 194
+    195:
+      townName: Садово
+      postCode: 4122
+      id: 195
+    196:
+      townName: Самоков
+      postCode: 2000
+      id: 196
+    197:
+      townName: Сандански
+      postCode: 2800
+      id: 197
+    198:
+      townName: Сапарева баня
+      postCode: 2650
+      id: 198
+    199:
+      townName: Свети Влас
+      postCode: 8256
+      id: 199
+    200:
+      townName: Свиленград
+      postCode: 6500
+      id: 200
+    201:
+      townName: Свищов
+      postCode: 5250
+      id: 201
+    202:
+      townName: Своге
+      postCode: 2260
+      id: 202
+    203:
+      townName: Севлиево
+      postCode: 5400
+      id: 203
+    204:
+      townName: Сеново
+      postCode: 7038
+      id: 204
+    205:
+      townName: Септември
+      postCode: 4490
+      id: 205
+    206:
+      townName: Силистра
+      postCode: 7500
+      id: 206
+    207:
+      townName: Симеоновград
+      postCode: 6490
+      id: 207
+    208:
+      townName: Симитли
+      postCode: 2730
+      id: 208
+    209:
+      townName: Славяново
+      postCode: 5840
+      id: 209
+    210:
+      townName: Сливен
+      postCode: 8800
+      id: 210
+    211:
+      townName: Сливница
+      postCode: 2200
+      id: 211
+    212:
+      townName: Сливо поле
+      postCode: 7060
+      id: 212
+    213:
+      townName: Смолян
+      postCode: 4700
+      id: 213
+    214:
+      townName: Смядово
+      postCode: 9820
+      id: 214
+    215:
+      townName: Созопол
+      postCode: 8130
+      id: 215
+    216:
+      townName: Сопот
+      postCode: 4330
+      id: 216
+    217:
+      townName: София
+      postCode: 1000
+      id: 217
+    218:
+      townName: Средец
+      postCode: 8300
+      id: 218
+    219:
+      townName: Стамболийски
+      postCode: 4210
+      id: 219
+    220:
+      townName: Стара Загора
+      postCode: 6000
+      id: 220
+    221:
+      townName: Стражица
+      postCode: 5150
+      id: 221
+    222:
+      townName: Стралджа
+      postCode: 8680
+      id: 222
+    223:
+      townName: Стрелча
+      postCode: 4530
+      id: 223
+    224:
+      townName: Суворово
+      postCode: 9170
+      id: 224
+    225:
+      townName: Сунгурларе
+      postCode: 8470
+      id: 225
+    226:
+      townName: Сухиндол
+      postCode: 5240
+      id: 226
+    227:
+      townName: Съединение
+      postCode: 4190
+      id: 227
+    228:
+      townName: Сърница
+      postCode: 4633
+      id: 228
+    229:
+      townName: Твърдица
+      postCode: 8890
+      id: 229
+    230:
+      townName: Тервел
+      postCode: 9450
+      id: 230
+    231:
+      townName: Тетевен
+      postCode: 5700
+      id: 231
+    232:
+      townName: Тополовград
+      postCode: 6560
+      id: 232
+    233:
+      townName: Троян
+      postCode: 5600
+      id: 233
+    234:
+      townName: Трън
+      postCode: 2460
+      id: 234
+    235:
+      townName: Тръстеник
+      postCode: 5857
+      id: 235
+    236:
+      townName: Трявна
+      postCode: 5350
+      id: 236
+    237:
+      townName: Тутракан
+      postCode: 7600
+      id: 237
+    238:
+      townName: Търговище
+      postCode: 7700
+      id: 238
+    239:
+      townName: Угърчин
+      postCode: 5580
+      id: 239
+    240:
+      townName: Хаджидимово
+      postCode: 2933
+      id: 240
+    241:
+      townName: Харманли
+      postCode: 6450
+      id: 241
+    242:
+      townName: Хасково
+      postCode: 6300
+      id: 242
+    243:
+      townName: Хисаря
+      postCode: 4180
+      id: 243
+    244:
+      townName: Цар Калоян
+      postCode: 7280
+      id: 244
+    245:
+      townName: Царево
+      postCode: 8260
+      id: 245
+    246:
+      townName: Чепеларе
+      postCode: 4850
+      id: 246
+    247:
+      townName: Червен бряг
+      postCode: 5980
+      id: 247
+    248:
+      townName: Черноморец
+      postCode: 8142
+      id: 248
+    249:
+      townName: Чипровци
+      postCode: 3460
+      id: 249
+    250:
+      townName: Чирпан
+      postCode: 6200
+      id: 250
+    251:
+      townName: Шабла
+      postCode: 9680
+      id: 251
+    252:
+      townName: Шивачево
+      postCode: 8895
+      id: 252
+    253:
+      townName: Шипка
+      postCode: 6150
+      id: 253
+    254:
+      townName: Шумен
+      postCode: 9700
+      id: 254
+    255:
+      townName: Ябланица
+      postCode: 5750
+      id: 255
+    256:
+      townName: Якоруда
+      postCode: 2790
+      id: 256
+    257:
+      townName: Ямбол
+      postCode: 8600
+      id: 257

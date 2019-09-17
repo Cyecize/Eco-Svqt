@@ -33,6 +33,13 @@ class YamlFile
         return new YamlFile("currencies.yaml");
     }
 
+    /**
+     * @return YamlFile for location info.
+     */
+    public static function getLocationsFile(): YamlFile {
+        return new YamlFile("locations.yaml");
+    }
+
     public function set(string $key, $value)
     {
         $this->fileContent[$key] = $value;

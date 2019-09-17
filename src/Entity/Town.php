@@ -23,13 +23,13 @@ class Town
 
     /**
      * @var string
-     * @ORM\Column(name="town_name", type="string", unique=true, length=50)
+     * @ORM\Column(name="town_name", type="string", length=50)
      */
     private $townName;
 
     /**
      * @var string
-     * @ORM\Column(name="post_code", type="string", length=10)
+     * @ORM\Column(name="post_code", type="string", length=10, unique=true)
      */
     private $postCode;
 
