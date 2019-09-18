@@ -31,5 +31,5 @@ services:
 
 twig:
     globals:
-        localLang: '@App\Service\LocalLanguage'
-        localCurrency: '@App\Service\LocalCurrency'
+        localLang: '@App\Service\Lang\LocalLanguage'
+        localCurrency: '@App\Service\Currency\LocalCurrency'

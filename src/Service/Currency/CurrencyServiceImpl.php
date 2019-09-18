@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace App\Service\Currency;
 
 use App\Constant\PreDefinedCurrency;
 use App\Entity\Currency;
