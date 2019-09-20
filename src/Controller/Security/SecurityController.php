@@ -74,6 +74,10 @@ class SecurityController extends BaseController
     {
         $this->validateToken($request);
 
+        if ($this->userService->count() < 1) {
+            $firstRunService->initDb();
+        }
+        
         $bindingModel = new UserRegisterBindingModel();
         $form = $this->createForm(UserRegisterType::class, $bindingModel);
         $form->handleRequest($request);
@@ -89,10 +93,6 @@ class SecurityController extends BaseController
         if ($userInDb != null) {
             $this->addError('email', $this->dictionary->emailTaken());
             return $this->redirectToRoute('security_register');
-        }
-
-        if ($this->userService->count() < 1) {
-            $firstRunService->initDb();
         }
 
         $user = $this->userService->createUser($bindingModel, Roles::USER);
