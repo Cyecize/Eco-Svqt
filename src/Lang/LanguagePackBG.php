@@ -52,6 +52,13 @@ class LanguagePackBG implements LanguagePack
 
     private const LANGUAGE = "Език";
 
+    private const LOGOUT = "Изход";
+
+
+    public function logout(): string
+    {
+        return self::LOGOUT;
+    }
 
     function emailAddress(): string
     {

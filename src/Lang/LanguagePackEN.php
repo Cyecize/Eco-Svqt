@@ -42,6 +42,13 @@ class LanguagePackEN implements LanguagePack
 
     private const LANGUAGE = "Language";
 
+    private const LOGOUT = "Logout";
+
+
+    public function logout(): string
+    {
+        return self::LOGOUT;
+    }
 
     function emailAddress(): string
     {

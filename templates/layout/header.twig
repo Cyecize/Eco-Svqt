@@ -40,13 +40,25 @@
 
                                 <div class="headertop-dropdown-container justify-content-center justify-content-md-end">
                                     <div class="header-top-single-dropdown">
-                                        <a href="javascript:void(0)" class="active-dropdown-trigger text-capitalize" id="user-options">{{ dict.myAccount }} <i class="ion-ios-arrow-down"></i></a>
+                                        <a href="javascript:void(0)" class="active-dropdown-trigger text-capitalize" id="user-options">
+                                            {{ dict.myAccount }} <i class="ion-ios-arrow-down"></i>
+                                        </a>
                                         <!--=======  dropdown menu items  =======-->
 
                                         <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu extra-small-mobile-fix">
                                             <ul>
-                                                <li><a href="{{ path('security_login') }}">{{ dict.login }}</a></li>
-                                                <li><a href="{{ path('security_register') }}">{{ dict.register }}</a></li>
+                                                {% if app.user %}
+                                                    <li>
+                                                        <a href="{{ path('security_logout') }}">{{ dict.logout }}</a>
+                                                    </li>
+                                                {% else %}
+                                                    <li>
+                                                        <a href="{{ path('security_login') }}">{{ dict.login }}</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ path('security_register') }}">{{ dict.register }}</a>
+                                                    </li>
+                                                {% endif %}
                                             </ul>
                                         </div>
 
@@ -70,7 +82,13 @@
                                     </div>
                                     <span class="separator">|</span>
                                     <div class="header-top-single-dropdown">
-                                        <a href="javascript:void(0)" class="active-dropdown-trigger" id="currency-options">{{ localCurrency.localCurrency.sign }}<i class="ion-ios-arrow-down"></i></a>
+                                        <a href="javascript:void(0)" class="active-dropdown-trigger"
+                                           id="currency-options">
+                                            <i class="fa fa-money" style="font-size: 15px; color: rgba(0,0,0,0.5)"
+                                               aria-hidden="true"></i>
+                                            &nbsp;
+                                            {{ localCurrency.localCurrency.sign }}<i class="ion-ios-arrow-down"></i>
+                                        </a>
                                         <!--=======  dropdown menu items  =======-->
 
                                         <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu">

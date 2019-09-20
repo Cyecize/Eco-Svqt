@@ -50,4 +50,6 @@ interface LanguagePack
     function currency(): string;
 
     function language(): string;
+
+    function logout(): string;
 }
