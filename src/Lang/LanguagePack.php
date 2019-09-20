@@ -26,4 +26,28 @@ interface LanguagePack
     function quickOrder(): string;
 
     function searchProductsHere(): string;
+
+    function invalidPassword(): string;
+
+    function emailDoesNotExist(): string;
+
+    function fieldCannotBeNull(): string;
+
+    function invalidValue(): string;
+
+    function invalidPasswordLength(): string;
+
+    function passwordsDoNotMatch(): string;
+
+    function emailTaken(): string;
+
+    function emailAddress(): string;
+
+    function password(): string;
+
+    function confirmPassword(): string;
+
+    function currency(): string;
+
+    function language(): string;
 }

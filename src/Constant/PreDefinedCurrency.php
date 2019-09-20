@@ -62,7 +62,10 @@ class PreDefinedCurrency
         return new PreDefinedCurrency("Euro", "EUR", 1.9);
     }
 
-    public static final function ALL()
+    /**
+     * @return PreDefinedCurrency[]
+     */
+    public static final function ALL(): array
     {
         if (self::$ALL == null) {
             self::$ALL = [self::BGN(), self::USD(), self::EUR()];

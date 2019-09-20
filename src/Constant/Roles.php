@@ -8,5 +8,7 @@ class Roles
 
     public const ADMIN = "ROLE_ADMIN";
 
-    public const ALL = [self::USER, self::ADMIN];
+    public const GOD = "ROLE_GOD";
+
+    public const ALL = [self::USER, self::ADMIN, self::GOD];
 }
