@@ -1,0 +1,9 @@
+<div class="text-danger">
+    <ul style="list-style: none;">
+        {% if validationErrors[field] is defined %}
+            {% for error in validationErrors[field] %}
+                <li>{{ localLang.forName(error) }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>

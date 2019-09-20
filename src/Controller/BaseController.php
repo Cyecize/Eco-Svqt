@@ -8,9 +8,12 @@ use App\Lang\LanguagePack;
 use App\Service\Lang\LocalLanguage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 abstract class BaseController extends Controller
 {
+    private const VALIDATION_ERRORS = 'validationErrors';
+
     private const INVALID_TOKEN = "Invalid token";
 
     /**
@@ -23,10 +26,47 @@ abstract class BaseController extends Controller
      */
     protected $dictionary;
 
+    /**
+     * Keeps track of current form errors.
+     * @var array
+     */
+    private $validationErrors;
+
     public function __construct(LocalLanguage $language)
     {
         $this->language = $language;
         $this->dictionary = $language->dictionary();
+        $this->validationErrors = [];
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface
+     */
+    protected function getFlashBag()
+    {
+        return $this->container->get('session')->getFlashBag();
+    }
+
+    /**
+     * @param $bindingModel
+     */
+    protected function addFlashModel($bindingModel): void
+    {
+        $this->addFlash('model', $bindingModel);
+    }
+
+    /**
+     * return binding model
+     */
+    protected function getFlashModel()
+    {
+        $arr = $this->getFlashBag()->get('model', []);
+
+        if (count($arr) > 0) {
+            return $arr[0];
+        }
+
+        return null;
     }
 
     /**
@@ -61,7 +101,27 @@ abstract class BaseController extends Controller
      */
     protected function validate($bindingModel)
     {
-        return $this->get('validator')->validate($bindingModel);
+        $validationErrors = $this->get('validator')->validate($bindingModel);
+
+        foreach ($validationErrors as $validationError) {
+            $this->addError($validationError->getPropertyPath(), $validationError->getMessage());
+        }
+
+        return $validationErrors;
+    }
+
+    /**
+     * Add FieldError to form.
+     * @param string $fieldName
+     * @param string $message
+     */
+    protected function addError(string $fieldName, string $message): void
+    {
+        if (!key_exists($fieldName, $this->validationErrors)) {
+            $this->validationErrors[$fieldName] = [];
+        }
+
+        $this->validationErrors[$fieldName][] = $message;
     }
 
     /**
@@ -75,5 +135,17 @@ abstract class BaseController extends Controller
         if (!$this->isCsrfTokenValid('token', $token)) {
             throw new InternalRestException(self::INVALID_TOKEN);
         }
+    }
+
+    protected function redirectToRoute($route, array $parameters = [], $status = 302)
+    {
+        $this->addFlash(self::VALIDATION_ERRORS, $this->validationErrors);
+        return parent::redirectToRoute($route, $parameters, $status);
+    }
+
+    protected function render($view, array $parameters = [], Response $response = null)
+    {
+        $parameters[self::VALIDATION_ERRORS] = $this->getFlashBag()->get(self::VALIDATION_ERRORS, [[]])[0];
+        return parent::render($view, $parameters, $response);
     }
 }
