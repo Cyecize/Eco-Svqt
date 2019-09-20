@@ -261,4 +261,9 @@ class User implements UserInterface
     {
 
     }
+
+    public function addRole(Role $role): void
+    {
+        $this->roles->add($role);
+    }
 }

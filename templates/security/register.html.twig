@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+{# @var dict \App\Lang\LanguagePack #}
+
+{% block title %} {{ dict.register }} {% endblock %}
+
+{% block body %}
+    <div class="breadcrumb-area pt-10 pb-10 border-bottom mb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=======  breadcrumb content  =======-->
+
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li class="has-child"><a href="{{ path('homepage') }}">{{ dict.home }}</a></li>
+                            <li>{{ dict.register }}</li>
+                        </ul>
+                    </div>
+
+                    <!--=======  End of breadcrumb content  =======-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section pb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+                    <form method="post" action="{{ path('security_register_post') }}">
+
+                        <div class="login-form">
+                            <h4 class="login-title">{{ dict.register }}</h4>
+
+                            <div class="row">
+                                <div class="col-md-12 mb-20">
+                                    <label for="email">{{ dict.emailAddress }}*</label>
+                                    <input id="email" class="mb-0" value="{{ model.email }}" type="email"
+                                           placeholder="{{ dict.emailAddress }}" required name="user_register[email]">
+                                    {% embed 'field-errors.twig' with {'field': 'email'} %} {% endembed %}
+                                </div>
+                                <div class="col-md-6 mb-20">
+                                    <label for="password">{{ dict.password }}</label>
+                                    <input id="password" class="mb-0" type="password" placeholder="******" required
+                                           minlength="6" name="user_register[password]">
+                                    {% embed 'field-errors.twig' with {'field': 'password'} %} {% endembed %}
+                                </div>
+                                <div class="col-md-6 mb-20">
+                                    <label for="confirmPassword">{{ dict.confirmPassword }}</label>
+                                    <input id="confirmPassword" class="mb-0" type="password" placeholder="******"
+                                           required name="user_register[confPassword]">
+                                    {% embed 'field-errors.twig' with {'field': 'confPassword'} %} {% endembed %}
+                                </div>
+                                <div class="col-md-12 mb-20">
+                                    <label for="language">{{ dict.language }}</label>
+                                    <select name="user_register[language]" id="language" required class="nice-select">
+                                        {% for lang in langs %}
+                                            <option {% if model.language != null and model.language.localeName == lang %} selected {% endif %}>{{ lang }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    {% embed 'field-errors.twig' with {'field': 'language'} %} {% endembed %}
+                                </div>
+                                <div class="col-md-12 mb-20">
+                                    <label for="currency">{{ dict.currency }}</label>
+                                    <select name="user_register[currency]" id="currency" required class="nice-select">
+                                        {% for currency in currencies %}
+                                            <option {% if model.currency != null and model.currency.sign == currency.sign %} selected {% endif %} value="{{ currency.sign }}">
+                                                {{ currency.sign }} - {{ currency.currencyName }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    {% embed 'field-errors.twig' with {'field': 'currency'} %} {% endembed %}
+                                </div>
+                                <div class="col-12 text-right">
+                                    {% embed 'token.twig' %} {% endembed %}
+                                    <button class="register-button mt-0" type="submit">{{ dict.register }}</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

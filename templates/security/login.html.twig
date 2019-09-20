@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+{# @var dict \App\Lang\LanguagePack #}
+
+{% block title %} {{ dict.login }} {% endblock %}
+
+{% block body %}
+    <div class="breadcrumb-area pt-10 pb-10 border-bottom mb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=======  breadcrumb content  =======-->
+
+                    <div class="breadcrumb-content">
+                        <ul>
+                            <li class="has-child"><a href="{{ path('homepage') }}">{{ dict.home }}</a></li>
+                            <li>{{ dict.login }}</li>
+                        </ul>
+                    </div>
+
+                    <!--=======  End of breadcrumb content  =======-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section pb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+                    <!-- Login Form s-->
+                    <form name="authenticate" action="{{ path('security_login') }}" method="post">
+
+                        <div class="login-form">
+                            <h4 class="login-title">{{ dict.login }}</h4>
+
+                            <div class="row">
+                                <div class="col-md-12 col-12 mb-20">
+                                    <label for="email">{{ dict.emailAddress }}</label>
+                                    <input name="_username" value="{{ last_username }}" id="email" class="mb-0"
+                                           type="email" placeholder="{{ dict.emailAddress }}" required>
+                                    {% embed 'field-errors.twig' with {'field': 'email'} %} {% endembed %}
+                                </div>
+                                <div class="col-12 mb-20">
+                                    <label for="password">{{ dict.password }}</label>
+                                    <input name="_password" required id="password" class="mb-0" type="password"
+                                           placeholder="******">
+                                    {% embed 'field-errors.twig' with {'field': 'password'} %} {% endembed %}
+                                </div>
+
+                                <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
+                                    <a href="#"> Forgotten password ? TODO</a>
+                                </div>
+
+                                <div class="col-md-12 text-right">
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                                    <button class="register-button mt-0">{{ dict.login }}</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

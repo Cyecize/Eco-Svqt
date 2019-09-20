@@ -66,7 +66,10 @@ class UserServiceImpl implements UserService
                 break;
         }
 
-        $user->setRoles($roles);
+        foreach ($roles as $role) {
+            $user->addRole($role);
+        }
+
         $user->setPassword($this->encoder->encodePassword($user, $user->getPassword()));
 
         $this->entityManager->persist($user);

@@ -145,7 +145,7 @@ abstract class BaseController extends Controller
 
     protected function render($view, array $parameters = [], Response $response = null)
     {
-        $parameters[self::VALIDATION_ERRORS] = $this->getFlashBag()->get(self::VALIDATION_ERRORS, [[]])[0];
+        $parameters[self::VALIDATION_ERRORS] = array_merge($this->getFlashBag()->get(self::VALIDATION_ERRORS, [[]])[0], $this->validationErrors);
         return parent::render($view, $parameters, $response);
     }
 }

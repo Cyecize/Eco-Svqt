@@ -32,7 +32,7 @@ class RoleServiceImpl implements RoleService
     {
         try {
             foreach (Roles::ALL as $roleName) {
-                if ($this->findByRoleName($roleName) != null) {
+                if ($this->findByRoleName($roleName) == null) {
                     $this->createRole($roleName);
                 }
             }
