@@ -4,23 +4,29 @@ namespace App\Controller\Security;
 
 use App\BindingModel\User\UserRegisterBindingModel;
 use App\Constant\Config;
+use App\Constant\LogLocations;
 use App\Constant\PreDefinedCurrency;
 use App\Constant\Roles;
 use App\Controller\BaseController;
+use App\Exception\InternalRestException;
 use App\Form\UserRegisterType;
 use App\Service\FirstRunService;
 use App\Service\Lang\LocalLanguage;
+use App\Service\Log\LogService;
 use App\Service\User\UserService;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Exception;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends BaseController
 {
-    //TODO: private const LOGGER_LOCATION = "Security Controller";
-
+    /**
+     * @var UserService
+     */
     private $userService;
 
     public function __construct(LocalLanguage $language, UserService $userService)
@@ -34,7 +40,7 @@ class SecurityController extends BaseController
      * @Security("is_anonymous()", message="You are already logged in")
      * @param AuthenticationUtils $authUtils
      * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @return RedirectResponse|Response
      */
     public function loginAction(AuthenticationUtils $authUtils, Request $request)
     {
@@ -67,17 +73,18 @@ class SecurityController extends BaseController
      * @Security("is_anonymous()", message="You are already logged in")
      * @param Request $request
      * @param FirstRunService $firstRunService
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @throws \App\Exception\InternalRestException
+     * @param LogService $logService
+     * @return Response
+     * @throws InternalRestException
      */
-    public function registerAction(Request $request, FirstRunService $firstRunService /*LogService $logService*/) //TODO: add log service
+    public function registerAction(Request $request, FirstRunService $firstRunService, LogService $logService) //TODO: add log service
     {
         $this->validateToken($request);
 
         if ($this->userService->count() < 1) {
             $firstRunService->initDb();
         }
-        
+
         $bindingModel = new UserRegisterBindingModel();
         $form = $this->createForm(UserRegisterType::class, $bindingModel);
         $form->handleRequest($request);
@@ -97,7 +104,7 @@ class SecurityController extends BaseController
 
         $user = $this->userService->createUser($bindingModel, Roles::USER);
 
-        //TODO: $logService->log(self::LOGGER_LOCATION, sprintf("User with username %s was created", $user->getUsername()));
+        $logService->log(LogLocations::SECURITY_CONTROLLER, sprintf("User with username %s was created", $user->getUsername()));
 
         return $this->redirectToRoute("security_login", ['u' => $user->getUsername()]);
     }
@@ -105,8 +112,7 @@ class SecurityController extends BaseController
     /**
      * @Route(path="/register", name="security_register", methods={"GET"})
      * @Security("is_anonymous()", message="You are already logged in")
-     * @return \Symfony\Component\HttpFoundation\Response
-     * @ParamConverter()
+     * @return Response
      */
     public function registerGetAction()
     {
@@ -128,10 +134,10 @@ class SecurityController extends BaseController
      * But, this will never be executed. Symfony will intercept this first
      * and handle the logout automatically. See logout in app/config/security.yml
      * @Route("/logout/", name="security_logout")
-     * @throws \Exception
+     * @throws Exception
      */
     public function logoutAction()
     {
-        throw new \Exception('This should never be reached!');
+        throw new Exception('This should never be reached!');
     }
 }
