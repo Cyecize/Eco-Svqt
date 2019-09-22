@@ -35,10 +35,29 @@
 
                                 <!--=======  End of header top social links  =======-->
                             </div>
-                            <div class="col-lg-4 offset-lg-4 col-md-6">
+                            <div class="col-lg-5 offset-lg-3 col-md-6">
                                 <!--=======  header top dropdown container  =======-->
 
                                 <div class="headertop-dropdown-container justify-content-center justify-content-md-end">
+
+                                    {% if isAdmin %}
+                                        <div class="header-top-single-dropdown">
+                                            <a href="javascript:void(0)" class="active-dropdown-trigger" id="admin-panel-options">
+                                                Admin Panel <i class="ion-ios-arrow-down"></i>
+                                            </a>
+                                            <!--=======  dropdown menu items  =======-->
+
+                                            <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu">
+                                                <ul>
+                                                    <li><a href="/admin/products"> Manage Products </a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!--=======  End of dropdown menu items  =======-->
+                                        </div>
+                                        <span class="separator">|</span>
+                                    {% endif %}
+
                                     <div class="header-top-single-dropdown">
                                         <a href="javascript:void(0)" class="active-dropdown-trigger text-capitalize" id="user-options">
                                             {{ dict.myAccount }} <i class="ion-ios-arrow-down"></i>
@@ -65,6 +84,7 @@
                                         <!--=======  End of dropdown menu items  =======-->
                                     </div>
                                     <span class="separator">|</span>
+
                                     <div class="header-top-single-dropdown">
                                         <a href="javascript:void(0)" class="active-dropdown-trigger text-uppercase" id="language-options">
                                             <img src="{{ asset('assets/img/lang/world.png') }}" width="16px" height="16px" alt=""> {{ dict.localLang }} <i class="ion-ios-arrow-down"></i>

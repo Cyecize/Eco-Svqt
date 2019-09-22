@@ -69,30 +69,31 @@
     /*=============================================
     =            dropdown active on click            =
     =============================================*/
-    
-    $('#user-options').on('click', function(event){
-        event.stopPropagation();
-        $(this).siblings().toggleClass('deactive-dropdown-menu active-dropdown-menu');
-        $("#language-options").siblings().removeClass('active-dropdown-menu');
-        $("#currency-options").siblings().removeClass('active-dropdown-menu');
-        
-    });
-    
-    $('#language-options').on('click', function(event){
-        event.stopPropagation();
-        $(this).siblings().toggleClass('deactive-dropdown-menu active-dropdown-menu');
-        $("#user-options").siblings().removeClass('active-dropdown-menu');
-        $("#currency-options").siblings().removeClass('active-dropdown-menu');
-        
-    });
-    
-    $('#currency-options').on('click', function(event){
-        event.stopPropagation();
-        $(this).siblings().toggleClass('deactive-dropdown-menu active-dropdown-menu');
-        $("#language-options").siblings().removeClass('active-dropdown-menu');
-        $("#user-options").siblings().removeClass('active-dropdown-menu');
-        
-    });
+
+	var dropdownItems = [
+		$('#admin-panel-options'),
+		$('#user-options'),
+		$('#language-options'),
+		$('#currency-options'),
+	];
+
+	dropdownItems.forEach(function (dropdownItem) {
+		dropdownItem.on('click', function (e) {
+			e.stopPropagation();
+
+			var isAlreadyOpened = dropdownItem.parent().find('.active-dropdown-menu').length > 0;
+
+			//Hide all dropdown menus.
+			dropdownItems.forEach(function (item) {
+				item.siblings().removeClass('active-dropdown-menu');
+			});
+
+			//If the dropdown has been opened, don't reopen it. This way we achieve close functionality.
+			if (!isAlreadyOpened) {
+				dropdownItem.siblings().toggleClass('deactive-dropdown-menu active-dropdown-menu');
+			}
+		});
+	});
     
     $('#small-cart-trigger').on('click', function(event){
         event.stopPropagation();

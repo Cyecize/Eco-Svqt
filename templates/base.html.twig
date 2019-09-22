@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {# @var dict \App\Lang\LanguagePack #}
 {% set dict = localLang.dictionary %}
+{% set isAdmin = is_granted('ROLE_ADMIN') %}
 
 <html lang="{{ dict.localLang }}">
 
