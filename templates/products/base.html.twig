@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Products {% endblock %}
+
+{% block body %}
+    <div class="page-section pb-40">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-9">
+            <div class="breadcrumb-area pt-10 pb-10 border-bottom mb-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="breadcrumb-content">
+                                <ul>
+                                    <li class="has-child"><a href="{{ path('homepage') }}">{{ dict.home }}</a></li>
+                                    <li>{% block sectionTitle %} {% endblock %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block sectionBody %}
+                <h2 class="alert alert-warning">Select an item from the menu.</h2>
+            {% endblock %}
+        </div>
+        <div class="col-lg-3">
+            <div class="page-sidebar">
+                <div class="sidebar-widget-wrapper mb-30">
+                    <div class="sidebar-widget">
+                        <h3 class="sidebar-widget-title">Options</h3>
+                        <ul class="category-list">
+
+                            <!-- Categories -->
+                            <li class="has-children font-weight-bold">Categories
+                                <ul>
+                                    <li><a href="{{ path('create_category_get') }}">Create New Category</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- Products -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
