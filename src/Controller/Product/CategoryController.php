@@ -45,7 +45,7 @@ class CategoryController extends BaseController
      */
     public function createCategory()
     {
-        $model = $this->getFlashModel();
+        $model = $this->getFlashModel(CreateCategoryBindingModel::class);
 
         if ($model == null) {
             $model = new CreateCategoryBindingModel();
@@ -80,6 +80,6 @@ class CategoryController extends BaseController
 
         $this->categoryService->createCategory($bindingModel);
 
-        return $this->redirectToRoute('homepage'); //TODO redirect to other route.
+        return $this->redirectToRoute('product_management');
     }
 }

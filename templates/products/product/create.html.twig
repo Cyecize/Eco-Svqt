@@ -1,0 +1,94 @@
+{% extends 'products/base.html.twig' %}
+{# @var products_ \App\Util\TwigProductUtils #}
+{# @var utils \App\Util\TwigUtils #}
+
+{% block sectionTitle %} New Product {% endblock %}
+
+{% block sectionBody %}
+    <form action="{{ path('create_product_post') }}" method="post">
+
+        <div class="login-form common-form mb-2">
+            <h4 class="login-title">New Product</h4>
+
+            <div class="row">
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="barcode">Barcode</label>
+                    <input name="create_product[barcode]" id="barcode" required type="text" maxlength="50"
+                           value="{{ model.barcode }}"
+                           placeholder="Barcode">
+                    {% embed 'field-errors.twig' with {'field': 'barcode'} %} {% endembed %}
+                </div>
+
+                {% for language in languages %}
+                    {% set fieldName = 'create_product[' ~ language.localeName ~ 'Title]' %}
+                    <div class="col-12 mb-20">
+                        <label for="title{{ language.id }}">{{ language.localeName }} Title</label>
+                        <input name="{{ fieldName }}" required id="title{{ language.id }}" class="mb-0" type="text"
+                               placeholder="{{ language.localeName }} Title" maxlength="255"
+                               value="{{ utils.property(model, language.localeName ~ 'Title') }}">
+                        {% embed 'field-errors.twig' with {'field': language.localeName ~ 'Title' } %} {% endembed %}
+                    </div>
+                {% endfor %}
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="category">Category</label>
+                    <select name="create_product[category]" id="category" class="nice-select" required>
+                        <option value="" selected disabled>None</option>
+                        {% for category in categories %}
+                            <option value="{{ category.id }}" {% if model.category != null and model.category.id == category.id %} selected {% endif %}>
+                                {{ products_.categoryTitle(category) }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                    {% embed 'field-errors.twig' with {'field': 'category'} %} {% endembed %}
+                </div>
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="price">Price</label>
+                    <input name="create_product[price]" id="price" required type="number" value="{{ model.price }}"
+                           step="any">
+                    {% embed 'field-errors.twig' with {'field': 'price'} %} {% endembed %}
+                </div>
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="importPrice">Import Price</label>
+                    <input name="create_product[importPrice]" id="importPrice" required type="number" step="any"
+                           value="{{ model.importPrice }}">
+                    {% embed 'field-errors.twig' with {'field': 'importPrice'} %} {% endembed %}
+                </div>
+
+                {% for language in languages %}
+                    {% set fieldName = 'create_product[' ~ language.localeName ~ 'Description]' %}
+                    <div class="col-12 mb-20">
+                        <label for="description{{ language.id }}">{{ language.localeName }} Description</label>
+                        <textarea name="{{ fieldName }}" required id="description{{ language.id }}" cols="30" rows="10"
+                                  maxlength="255">{{ utils.property(model, language.localeName ~ 'Description') }}</textarea>
+                        {% embed 'field-errors.twig' with {'field': language.localeName ~ 'Description' } %} {% endembed %}
+                    </div>
+                {% endfor %}
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="quantity">Quantity</label>
+                    <input name="create_product[quantity]" id="quantity" required type="number" step="1"
+                           value="{{ model.quantity }}">
+                    {% embed 'field-errors.twig' with {'field': 'quantity'} %} {% endembed %}
+                </div>
+
+
+                <div class="col-md-12 col-12 mb-20">
+                    <label for="enabled">Enabled</label>
+                    <input name="create_product[enabled]" id="enabled"
+                           type="checkbox" {% if model.enabled %} checked {% endif %}>
+                    {% embed 'field-errors.twig' with {'field': 'enabled'} %} {% endembed %}
+                </div>
+
+                <div class="col-md-12 text-right">
+                    {% embed 'token.twig' %} {% endembed %}
+                    <button class="register-button mt-0">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}

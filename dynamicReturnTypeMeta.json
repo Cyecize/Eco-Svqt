@@ -9,6 +9,11 @@
       "class": "\\App\\Util\\ModelMapper",
       "method": "map",
       "position": 1
+    },
+    {
+      "class": "\\App\\Controller\\BaseController",
+      "method": "getFlashModel",
+      "position": 0
     }
   ],
   "functionCalls": [

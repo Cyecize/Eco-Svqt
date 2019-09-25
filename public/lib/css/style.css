@@ -11133,8 +11133,18 @@ h3.comment-counter
     color: #999;
 }
 
-/*----------  comment form  ----------*/
-.comment-form label
+/*----------  comment form  and common form ----------*/
+
+.common-form .nice-select {
+    width: 100%;
+    height: 50px;
+
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    background: #fff;
+}
+
+.comment-form label, .common-form label
 {
     font-size: 15px;
     font-weight: 500; 
@@ -11147,7 +11157,7 @@ h3.comment-counter
     color: #999;
 }
 
-.comment-form textarea
+.comment-form textarea, .common-form textarea
 {
     width: 100%;
     height: 130px;
@@ -11158,7 +11168,7 @@ h3.comment-counter
             box-shadow: 0 5px 4px 0 rgba(0, 0, 0, .1);
 }
 
-.comment-form input
+.comment-form input, .common-form input
 {
     line-height: 48px;
 

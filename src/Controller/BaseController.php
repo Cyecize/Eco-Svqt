@@ -9,6 +9,7 @@ use App\Service\Lang\LocalLanguage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface;
 
 abstract class BaseController extends Controller
 {
@@ -40,7 +41,7 @@ abstract class BaseController extends Controller
     }
 
     /**
-     * @return \Symfony\Component\HttpFoundation\Session\Flash\FlashBagInterface
+     * @return FlashBagInterface
      */
     protected function getFlashBag()
     {
@@ -56,14 +57,21 @@ abstract class BaseController extends Controller
     }
 
     /**
-     * return binding model
+     * @param $modelType
+     * @return object
      */
-    protected function getFlashModel()
+    protected function getFlashModel($modelType = null)
     {
         $arr = $this->getFlashBag()->get('model', []);
 
         if (count($arr) > 0) {
-            return $arr[0];
+            $model = $arr[0];
+
+            if ($modelType != null && $model instanceof $modelType) {
+                return $model;
+            } else if ($modelType == null) {
+                return $model;
+            }
         }
 
         return null;

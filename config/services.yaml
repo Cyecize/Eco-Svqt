@@ -37,4 +37,5 @@ twig:
   globals:
     localLang: '@App\Service\Lang\LocalLanguage'
     localCurrency: '@App\Service\Currency\LocalCurrency'
-    products: '@App\Util\TwigProductUtils'
+    products_: '@App\Util\TwigProductUtils'
+    utils: '@App\Util\TwigUtils'

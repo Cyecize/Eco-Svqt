@@ -15,12 +15,16 @@ class CreateCategoryBindingModel
     /**
      * @var string
      * @Assert\NotNull(message="fieldCannotBeNull")
+     * @Assert\NotBlank(message="fieldCannotBeNull")
+     * @Assert\Length(max="255", maxMessage="textTooLong")
      */
     private $bgTitle;
 
     /**
      * @var string
      * @Assert\NotNull(message="fieldCannotBeNull")
+     * @Assert\NotBlank(message="fieldCannotBeNull")
+     * @Assert\Length(max="255", maxMessage="textTooLong")
      */
     private $enTitle;
 

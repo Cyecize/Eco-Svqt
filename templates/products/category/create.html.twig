@@ -1,5 +1,5 @@
 {% extends 'products/base.html.twig' %}
-{# @var products \App\Util\TwigProductUtils #}
+{# @var products_ \App\Util\TwigProductUtils #}
 {% block sectionTitle %} New Category {% endblock %}
 
 {% block sectionBody %}
@@ -15,7 +15,7 @@
                         <option value="">None</option>
                         {% for category in parentCategories %}
                             <option value="{{ category.id }}">
-                                {{ products.categoryTitle(category) }}
+                                {{ products_.categoryTitle(category) }}
                             </option>
                         {% endfor %}
                     </select>
