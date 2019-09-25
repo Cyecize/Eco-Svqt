@@ -54,6 +54,19 @@ class LanguagePackBG implements LanguagePack
 
     private const LOGOUT = "Изход";
 
+    private const TEXT_TOO_LONG = "Текстът е твърде голям";
+
+    private const TEXT_TOO_SHORT = "Текстът е твърде малък.";
+
+    public function textTooLong(): string
+    {
+        return self::TEXT_TOO_LONG;
+    }
+
+    public function textTooShort(): string
+    {
+        return self::TEXT_TOO_SHORT;
+    }
 
     public function logout(): string
     {

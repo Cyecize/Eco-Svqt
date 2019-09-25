@@ -44,6 +44,19 @@ class LanguagePackEN implements LanguagePack
 
     private const LOGOUT = "Logout";
 
+    private const TEXT_TOO_LONG = "Text too long.";
+
+    private const TEXT_TOO_SHORT = "Text too short.";
+
+    public function textTooLong(): string
+    {
+        return self::TEXT_TOO_LONG;
+    }
+
+    public function textTooShort(): string
+    {
+        return self::TEXT_TOO_SHORT;
+    }
 
     public function logout(): string
     {

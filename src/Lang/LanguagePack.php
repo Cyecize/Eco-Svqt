@@ -52,4 +52,8 @@ interface LanguagePack
     function language(): string;
 
     function logout(): string;
+
+    function textTooLong(): string;
+
+    function textTooShort(): string;
 }
