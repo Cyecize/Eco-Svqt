@@ -2,15 +2,22 @@
 
 namespace App\Service\File;
 
+use App\Constant\LogLocations;
 use App\Exception\IllegalArgumentException;
+use App\Service\Log\LogService;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FileServiceImpl implements FileService
 {
 
-    public function __construct()
-    {
+    /**
+     * @var LogService
+     */
+    private $logService;
 
+    public function __construct(LogService $logService)
+    {
+        $this->logService = $logService;
     }
 
     /**
@@ -43,11 +50,14 @@ class FileServiceImpl implements FileService
             if (is_dir($file)) {
                 $this->removeDir($file);
             } else {
-                unlink($file);
+                $this->removeFile($file);
             }
         }
 
         rmdir($dirPath);
+        $logMsg = sprintf("Removed directory %s", $dirPath);
+        $this->logService->log(LogLocations::FILE_SERVICE, $logMsg);
+
         return true;
     }
 
@@ -59,6 +69,10 @@ class FileServiceImpl implements FileService
     {
         if (file_exists($filePath)) {
             unlink($filePath);
+
+            $logMsg = sprintf("Removed file %s.", $filePath);
+            $this->logService->log(LogLocations::FILE_SERVICE, $logMsg);
+
             return true;
         }
 
@@ -74,6 +88,9 @@ class FileServiceImpl implements FileService
     {
         $fileName = md5($uploadedFile->getFilename()) . time() . "." . $uploadedFile->guessExtension();
         $uploadedFile->move($saveDir, $fileName);
+
+        $logMsg = sprintf("Saved file %s to dir %s.", $fileName, $saveDir);
+        $this->logService->log(LogLocations::FILE_SERVICE, $logMsg);
 
         return $fileName;
     }
