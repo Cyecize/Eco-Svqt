@@ -75,11 +75,8 @@
                     {% embed 'field-errors.twig' with {'field': 'quantity'} %} {% endembed %}
                 </div>
 
-
                 <div class="col-md-12 col-12 mb-20">
-                    <label for="enabled">Enabled</label>
-                    <input name="create_product[enabled]" id="enabled"
-                           type="checkbox" {% if model.enabled %} checked {% endif %}>
+                    {% embed 'forms/checkbox.twig' with {id: 'enabled', name: 'create_product[enabled]', isChecked: model.enabled, message: 'Enabled'  } %} {% endembed %}
                     {% embed 'field-errors.twig' with {'field': 'enabled'} %} {% endembed %}
                 </div>
 
