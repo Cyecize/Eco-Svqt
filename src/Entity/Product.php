@@ -77,13 +77,21 @@ class Product
      */
     private $category;
 
-    //TODO: images
+    /**
+     * @var Image[]
+     * @ORM\ManyToMany(targetEntity="App\Entity\Image")
+     * @ORM\JoinTable(name="products_images",
+     *      joinColumns={@ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="CASCADE")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="image_id", referencedColumnName="id", onDelete="CASCADE")})
+     */
+    private $images;
 
     public function __construct()
     {
         $this->setEnabled(true);
         $this->setTitles(new ArrayCollection());
         $this->setDescriptions(new ArrayCollection());
+        $this->setImages(new ArrayCollection());
     }
 
     /**
@@ -230,11 +238,34 @@ class Product
         $this->category = $category;
     }
 
-    public function addTitle(Phrase $phrase) {
+    /**
+     * @return Image[]
+     */
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    /**
+     * @param ArrayCollection $images
+     */
+    public function setImages($images): void
+    {
+        $this->images = $images;
+    }
+
+    public function addTitle(Phrase $phrase)
+    {
         $this->titles->add($phrase);
     }
 
-    public function addDescription(Phrase $phrase) {
+    public function addDescription(Phrase $phrase)
+    {
         $this->descriptions->add($phrase);
+    }
+
+    public function addImage(Image $image)
+    {
+        $this->images->add($image);
     }
 }
