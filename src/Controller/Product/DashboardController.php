@@ -38,7 +38,8 @@ class DashboardController extends BaseController
      */
     public function dashboardAction(Request $request)
     {
-        $q = $request->get('q') || '';
+        $q = $request->get('q');
+        if ($q == null) $q = '';
 
         return $this->render('products/dashboard/dashboard.twig', [
             'page' => $this->productService->searchProduct($q, new Pageable($request))
