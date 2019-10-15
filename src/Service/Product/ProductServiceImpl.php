@@ -9,8 +9,11 @@ use App\Repository\ProductRepository;
 use App\Service\Lang\LangDbService;
 use App\Service\Lang\PhraseService;
 use App\Util\ModelMapper;
+use App\Util\Page;
+use App\Util\Pageable;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use phpDocumentor\Reflection\Types\This;
 
 class ProductServiceImpl implements ProductService
 {
@@ -62,5 +65,10 @@ class ProductServiceImpl implements ProductService
         $this->entityManager->flush();
 
         return $product;
+    }
+
+    public function searchProduct(string $searchString, Pageable $pageable): Page
+    {
+        return $this->repository->search($searchString, $pageable);
     }
 }
