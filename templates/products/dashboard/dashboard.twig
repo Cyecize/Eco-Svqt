@@ -1,0 +1,10 @@
+{% extends 'products/base.html.twig' %}
+{# @var products_ \App\Util\TwigProductUtils #}
+
+{% block sectionBody %}
+
+    {# @var product \App\Entity\Product #}
+    {% for product in page.elements %}
+        <p>{{ products_.productTitle(product) }}</p>
+    {% endfor %}
+{% endblock %}
