@@ -18,7 +18,7 @@ class PhraseRepository extends BaseRepository
     {
         $qb = $this->createQueryBuilder('p');
 
-        $qb = $this->forgeSearchQueryBuilder($qb, $text, ['phrase'], 'p');
+        $qb = $this->forgeSearchQueryBuilder($qb, $text, ['p.phrase']);
         $qb = $qb->andWhere($qb->expr()->eq('p.language', ':language'));
 
         $qb->setParameter('language', $language);
